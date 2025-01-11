@@ -1,0 +1,39 @@
+@use "variables.scss" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.link {
+  font-family: map-get($fonts, "title");
+  padding: 1rem;
+  text-decoration: none;
+  color: map-get($colors, "text-button");
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: map-get($colors, "button");
+  transition: color 0.3s ease, background-color 0.3s ease;
+  &:hover {
+    color: map-get($colors, "text-button-hover");
+    background-color: map-get($colors, "button-hover");
+  }
+}
+
+h1,
+h2,
+h3 {
+  font-family: map-get($fonts, "title");
+}
+
+h1 {
+  font-size: 4em;
+}
+h3 {
+  font-size: 2em;
+}
+
+p {
+  font-family: map-get($fonts, "text");
+  font-size: 1em;
+}

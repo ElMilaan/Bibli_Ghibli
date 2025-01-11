@@ -1,0 +1,9 @@
+// SCSS FILES
+@use "base";
+@use "./components/error404";
+@use "./components/home";
+@use "./components/movieCards";
+
+// TYPOGRAPHY
+@import url("https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montaga&display=swap");

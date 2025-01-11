@@ -1,11 +1,10 @@
-import { NavLink } from "react-router-dom";
+import { HomeContent, HomeHeader } from "../components";
 
 const Home = () => {
   return (
-    <div>
-      <h1>Bibli Ghibli</h1>
-      <p>Welcome Home</p>
-      <NavLink to="/catalog">Catalog</NavLink>
+    <div className="home-container">
+      <HomeHeader />
+      <HomeContent />
     </div>
   );
 };
