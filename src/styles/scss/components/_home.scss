@@ -54,31 +54,30 @@
       }
     }
   }
-}
-.content {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  height: 30vh;
-  background-color: map-get($colors, "background");
-  box-sizing: border-box;
-  border-top: 4px solid map-get($colors, "text");
-  .text {
-    color: map-get($colors, "text");
+  .content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 30vh;
+    background-color: map-get($colors, "background");
     box-sizing: border-box;
-    width: 50%;
-    padding-left: 10%;
-    .title {
-      margin-bottom: 20px;
+    border-top: 4px solid map-get($colors, "text");
+    .text {
+      box-sizing: border-box;
+      width: 50%;
+      padding-left: 10%;
+      .title {
+        margin-bottom: 20px;
+      }
     }
-  }
-  .link-catalog {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-    border-top-left-radius: 100px;
-    border-bottom-left-radius: 100px;
-    padding: 3vh 10vw;
-    width: 40%;
+    .link-catalog {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-top-left-radius: 100px;
+      border-bottom-left-radius: 100px;
+      padding: 3vh 10vw;
+      width: 40%;
+    }
   }
 }

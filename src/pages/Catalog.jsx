@@ -1,10 +1,10 @@
-import { CatalogHeader, MovieCards } from "../components";
+import { CatalogContent, CatalogHeader } from "../components";
 
 const Catalog = () => {
   return (
-    <div className="catalog">
+    <div className="catalog bgr">
       <CatalogHeader />
-      <MovieCards />
+      <CatalogContent />
     </div>
   );
 };

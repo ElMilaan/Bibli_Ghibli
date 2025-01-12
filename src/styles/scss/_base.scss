@@ -20,6 +20,14 @@
   }
 }
 
+.bg {
+  background-color: map-get($colors, "background");
+}
+
+.text {
+  color: map-get($colors, "text");
+}
+
 h1,
 h2,
 h3 {

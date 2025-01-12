@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const HomeContent = () => {
   return (
-    <div className="content">
+    <div className="content bg">
       <div className="text">
         <h3 className="title">Présentation du site</h3>
         <p className="desc">

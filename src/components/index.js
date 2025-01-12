@@ -3,9 +3,11 @@ export { default as HomeContent } from "./Home/HomeContent";
 export { default as HomeHeader } from "./Home/HomeHeader";
 
 // CATALOG COMPONENTS
+export { default as CatalogContent } from "./Catalog/CatalogContent";
+export { default as CatalogFilters } from "./Catalog/CatalogFilters";
 export { default as CatalogHeader } from "./Catalog/CatalogHeader";
-export { default as MovieCard } from "./Catalog/MovieCard";
-export { default as MovieCards } from "./Catalog/MovieCards";
+export { default as FilmCard } from "./Catalog/FilmCard";
+export { default as FilmCards } from "./Catalog/FilmCards";
 
 // GENERIC COMPONENTS
 export { default as Error } from "./Error";

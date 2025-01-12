@@ -20,6 +20,14 @@
   background-color: #7f8f7d;
 }
 
+.bg {
+  background-color: #252c26;
+}
+
+.text {
+  color: #b7cab4;
+}
+
 h1,
 h2,
 h3 {
@@ -125,8 +133,7 @@ p {
 .home-container .header .title-background .title-container .name {
   text-shadow: 2px 6px 10px rgba(0, 0, 0, 0.3);
 }
-
-.content {
+.home-container .content {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -136,16 +143,15 @@ p {
   box-sizing: border-box;
   border-top: 4px solid #b7cab4;
 }
-.content .text {
-  color: #b7cab4;
+.home-container .content .text {
   box-sizing: border-box;
   width: 50%;
   padding-left: 10%;
 }
-.content .text .title {
+.home-container .content .text .title {
   margin-bottom: 20px;
 }
-.content .link-catalog {
+.home-container .content .link-catalog {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   border-top-left-radius: 100px;
@@ -154,29 +160,33 @@ p {
   width: 40%;
 }
 
-.movies-container {
+.films-container {
+  width: 80vw;
+  box-sizing: border-box;
+  padding: 10vh 7vw;
   display: flex;
   flex-wrap: wrap;
   gap: 2em;
   justify-content: center;
+  overflow-y: auto;
+  border-left: solid 4px #b7cab4;
 }
-.movies-container .movie-card {
+.films-container .film-card {
+  border-radius: 40px;
   cursor: pointer;
   transform: scale(0.95);
   position: relative;
   display: flex;
   flex-direction: column;
   width: 200px;
-  transition: transform 0.3s ease;
+  transition: transform 0.2s ease;
 }
-.movies-container .movie-card .infos,
-.movies-container .movie-card .poster {
+.films-container .film-card .infos,
+.films-container .film-card .poster {
   border-radius: 20px;
+  transition: filter 0.2s ease;
 }
-.movies-container .movie-card .poster {
-  transition: filter 0.3s ease;
-}
-.movies-container .movie-card .infos {
+.films-container .film-card .infos {
   position: absolute;
   box-sizing: border-box;
   padding: 10px;
@@ -191,15 +201,102 @@ p {
   background: rgba(0, 0, 0, 0.8156862745);
   text-align: center;
   color: #b7cab4;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.2s ease;
   opacity: 0;
 }
-.movies-container .movie-card:hover {
+.films-container .film-card:hover {
   transform: scale(1);
 }
-.movies-container .movie-card:hover .card-image {
+.films-container .film-card:hover .card-image {
   filter: brightness(0.5);
 }
-.movies-container .movie-card:hover .infos {
+.films-container .film-card:hover .infos {
   opacity: 1;
+}
+
+.login {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url("./src/assets/img/Background/loading_totoro.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.login .login-text {
+  color: #b7cab4;
+  margin: 5vh 0 0 4vw;
+}
+
+.film-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.film-container .top {
+  width: 100vw;
+  height: 50vh;
+  overflow: hidden;
+  position: relative;
+}
+.film-container .top .banner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+  filter: brightness(0.4);
+}
+.film-container .content {
+  position: relative;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+.film-container .content .poster {
+  border-radius: 20px;
+  position: absolute;
+  min-width: 180px;
+  width: 12%;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 44%;
+}
+
+.catalog {
+  display: flex;
+  flex-direction: column;
+}
+.catalog .catalog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30vh;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-image: url("src/assets/img/Banner/chihiro_banner.jpg");
+  background-size: cover;
+  background-position: center 30%;
+  border-bottom: solid 4px #b7cab4;
+  box-sizing: border-box;
+}
+.catalog .catalog-header .title {
+  background-color: #252c26;
+  padding: 2vh 5vw;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+  font-size: 2.5em;
+}
+.catalog .catalog-content {
+  min-height: 70vh;
+  background-color: #252c26;
+  display: flex;
+  width: 100%;
+  flex: 1;
+}
+.catalog .catalog-content .filters-container {
+  width: 20vw;
+  box-sizing: border-box;
+  padding: 3vh 2vw;
 }

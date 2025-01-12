@@ -1,7 +1,7 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Catalog, Error404, Home } from "./pages";
+import { Catalog, Error404, Film, Home } from "./pages";
 import "./styles/index.css";
 
 const router = createBrowserRouter([
@@ -13,6 +13,10 @@ const router = createBrowserRouter([
   {
     path: "/catalog",
     element: <Catalog />,
+  },
+  {
+    path: "/catalog/:id",
+    element: <Film />,
   },
 ]);
 

@@ -1,0 +1,40 @@
+@use "../variables.scss" as *;
+
+.catalog {
+  display: flex;
+  flex-direction: column;
+  .catalog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30vh;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-image: url("src/assets/img/Banner/chihiro_banner.jpg");
+    background-size: cover;
+    background-position: center 30%;
+    border-bottom: solid 4px map-get($colors, "text");
+    box-sizing: border-box;
+    .title {
+      background-color: map-get($colors, "background");
+      padding: 2vh 5vw;
+      border-top-right-radius: 100px;
+      border-bottom-right-radius: 100px;
+      font-size: 2.5em;
+    }
+  }
+  .catalog-content {
+    min-height: 70vh;
+    background-color: map-get($colors, "background");
+    display: flex;
+    width: 100%;
+    flex: 1;
+
+    .filters-container {
+      width: 20vw;
+      box-sizing: border-box;
+      padding: 3vh 2vw;
+    }
+  }
+}

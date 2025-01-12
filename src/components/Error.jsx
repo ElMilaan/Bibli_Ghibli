@@ -1,7 +1,8 @@
 const Error = ({ error }) => {
   return (
-    <div>
-      <h1>Error : {error}</h1>
+    <div className="error-container bg">
+      <h1 className="error-title">Error</h1>
+      <p className="error-text">{error}</p>
     </div>
   );
 };

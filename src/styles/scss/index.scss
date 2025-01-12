@@ -2,7 +2,10 @@
 @use "base";
 @use "./components/error404";
 @use "./components/home";
-@use "./components/movieCards";
+@use "./components/filmCards";
+@use "./components/loading";
+@use "./components/film";
+@use "./components/catalog";
 
 // TYPOGRAPHY
 @import url("https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap");

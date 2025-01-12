@@ -1,7 +1,7 @@
 const CatalogHeader = () => {
   return (
     <div className="catalog-header">
-      <h1>Catalog</h1>
+      <h1 className="title text">Catalog</h1>
     </div>
   );
 };
