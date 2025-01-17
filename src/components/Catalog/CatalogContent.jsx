@@ -10,6 +10,7 @@ const CatalogContent = () => {
   const [error, setError] = useState(null);
   const [nbToShow, setNumToShow] = useState(7);
   const [sortOrder, setSortOrder] = useState("asc");
+  const [searchData, setSearchData] = useState("");
 
   useEffect(() => {
     const getFilms = async () => {
@@ -37,6 +38,10 @@ const CatalogContent = () => {
     setSortOrder(event.target.value);
   };
 
+  const onSearchUpdate = (event) => {
+    setSearchData(event.target.value);
+  };
+
   const sortedFilms = [...films].sort((a, b) => {
     if (sortOrder === "asc") {
       return a.title.localeCompare(b.title);
@@ -52,8 +57,15 @@ const CatalogContent = () => {
         numToShow={nbToShow}
         onSortUpdate={handleSortUpdate}
         sortOrder={sortOrder}
+        onSearchUpdate={onSearchUpdate}
       />
-      <FilmCards films={sortedFilms} nbToShow={nbToShow} />
+      <div className="right-part">
+        <FilmCards
+          films={sortedFilms}
+          nbToShow={nbToShow}
+          searchData={searchData}
+        />
+      </div>
     </div>
   );
 };

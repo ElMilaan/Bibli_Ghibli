@@ -2,7 +2,7 @@ import { CatalogContent, CatalogHeader } from "../components";
 
 const Catalog = () => {
   return (
-    <div className="catalog bgr">
+    <div className="catalog">
       <CatalogHeader />
       <CatalogContent />
     </div>

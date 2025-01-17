@@ -1,7 +1,6 @@
 @use "./variables" as *;
 
 .films-container {
-  width: 80vw;
   box-sizing: border-box;
   padding: 10vh 7vw;
   display: flex;
@@ -9,7 +8,6 @@
   gap: 2em;
   justify-content: center;
   overflow-y: auto;
-  border-left: solid 4px map-get($colors, "text");
   .film-card {
     border-radius: 40px;
     cursor: pointer;

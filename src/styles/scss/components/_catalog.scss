@@ -30,11 +30,40 @@
     display: flex;
     width: 100%;
     flex: 1;
+    .right-part {
+      border-left: solid 4px map-get($colors, "text");
+      width: 80vw;
+      box-sizing: border-box;
+      display: flex;
+      flex: 1;
+    }
+    .no-film {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+    }
 
     .filters-container {
+      display: flex;
+      flex-direction: column;
       width: 20vw;
       box-sizing: border-box;
       padding: 3vh 2vw;
+      .filters {
+        margin-top: 5vh;
+        .label {
+          font-size: 1em;
+        }
+        .container {
+          min-height: 8vh;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          padding: 2vh 0;
+        }
+      }
     }
   }
 }
