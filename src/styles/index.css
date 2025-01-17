@@ -177,12 +177,15 @@ p {
   display: flex;
   flex-direction: column;
   width: 200px;
+  height: 300px;
   transition: transform 0.2s ease;
 }
 .films-container .film-card .infos,
 .films-container .film-card .poster {
   border-radius: 20px;
   transition: filter 0.2s ease;
+  width: 100%;
+  height: 100%;
 }
 .films-container .film-card .infos {
   position: absolute;
@@ -190,8 +193,6 @@ p {
   padding: 10px;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -227,38 +228,73 @@ p {
   margin: 5vh 0 0 4vw;
 }
 
-.film-container {
+.margin-page {
+  background-color: #1e221e;
+}
+.margin-page .film-container {
+  background-color: #252c26;
+  margin: 0 15%;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  position: relative;
+  box-shadow: -10px 0 20px rgba(21, 27, 21, 0.7);
 }
-.film-container .top {
-  width: 100vw;
+.margin-page .film-container .top {
+  width: 100%;
   height: 50vh;
   overflow: hidden;
   position: relative;
+  border-bottom: 4px solid #b7cab4;
+  box-shadow: 0px 3px 20px rgba(21, 27, 21, 0.7);
 }
-.film-container .top .banner {
+.margin-page .film-container .top .banner {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center 25%;
   filter: brightness(0.4);
 }
-.film-container .content {
-  position: relative;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
+.margin-page .film-container .back-catalog {
+  top: 50vh;
+  transform: translateY(-50%);
+  position: absolute;
+  left: 0;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
 }
-.film-container .content .poster {
+.margin-page .film-container .poster {
   border-radius: 20px;
   position: absolute;
   min-width: 180px;
   width: 12%;
-  top: 50%;
+  top: 50vh;
   transform: translateY(-50%);
-  left: 44%;
+  left: min(44%, 50% - 90px);
+  box-shadow: -6px 6px 15px rgba(21, 27, 21, 0.7);
+}
+.margin-page .film-container .content {
+  padding: 150px 20%;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+.margin-page .film-container .content .infos {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 10%;
+}
+.margin-page .film-container .content .infos .except-title {
+  margin-top: 10%;
+  border: 3px solid #b7cab4;
+  border-radius: 20px;
+  padding: 5%;
+}
+.margin-page .film-container .content .infos .except-title > * {
+  padding: 20px;
 }
 
 .catalog {
@@ -321,9 +357,58 @@ p {
   font-size: 1em;
 }
 .catalog .catalog-content .filters-container .filters .container {
-  min-height: 8vh;
+  min-height: 5vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 2vh 0;
+}
+
+.slider-container .slider {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.slider-container .slider:focus {
+  outline-color: #b7cab4;
+}
+.slider-container .slider::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 3px;
+  background: #b7cab4;
+}
+.slider-container .slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  border: 2px solid #b7cab4;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  position: relative;
+  bottom: 8px;
+  background-color: #252c26;
+  background-size: 50%;
+  transition: background-color 0.03s ease;
+  cursor: grab;
+}
+.slider-container .slider::-webkit-slider-thumb:active {
+  cursor: grabbing;
+  background-color: #7f8f7d;
+}
+.slider-container .box-minmax {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1em;
+  color: #b7cab4;
+}
+.slider-container .box-minmax .nb-displayed {
+  border: 2px solid #b7cab4;
+  border-radius: 50%;
+  padding: 5px 10px;
+  box-sizing: border-box;
 }

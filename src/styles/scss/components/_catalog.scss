@@ -52,12 +52,13 @@
       box-sizing: border-box;
       padding: 3vh 2vw;
       .filters {
+        font-family: map-get($fonts, "Montaga");
         margin-top: 5vh;
         .label {
           font-size: 1em;
         }
         .container {
-          min-height: 8vh;
+          min-height: 5vh;
           display: flex;
           flex-direction: column;
           justify-content: space-between;

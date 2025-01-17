@@ -1,0 +1,55 @@
+@use "../variables.scss" as *;
+
+.slider-container {
+  .slider {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &:focus {
+      outline-color: map-get($colors, "text");
+    }
+    &::-webkit-slider-runnable-track {
+      -webkit-appearance: none;
+      appearance: none;
+      height: 3px;
+      background: map-get($colors, "text");
+    }
+
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      border: 2px solid map-get($colors, "text");
+      border-radius: 50%;
+      height: 20px;
+      width: 20px;
+      position: relative;
+      bottom: 8px;
+      background-color: map-get($colors, "background");
+      background-size: 50%;
+      transition: background-color 0.03s ease;
+      cursor: grab;
+
+      &:active {
+        cursor: grabbing;
+        background-color: map-get($colors, "button-hover");
+      }
+    }
+  }
+  .box-minmax {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1em;
+    color: map-get($colors, "text");
+    .nb-displayed {
+      border: 2px solid map-get($colors, "text");
+      border-radius: 50%;
+      padding: 5px 10px;
+      box-sizing: border-box;
+    }
+  }
+}

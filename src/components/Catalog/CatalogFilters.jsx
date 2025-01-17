@@ -4,26 +4,31 @@ const CatalogFilters = ({
   onSortUpdate,
   sortOrder,
   onSearchUpdate,
+  nbFilms,
 }) => {
   return (
     <div className="filters-container">
       <h2 className="filters-title text">Filters</h2>
       <div className="filters">
         <div className="slider-container container">
-          <label htmlFor="numToShow" className="label text">
-            Nombre de films à afficher : {numToShow}
-          </label>
           <input
             type="range"
-            id="numToShow"
-            min="8"
-            max="20"
+            id="rangeSlider"
+            min="1"
+            max={nbFilms}
             step="1"
             value={numToShow}
-            onChange={onFilterUpdate}
+            onChange={(e) => {
+              onFilterUpdate(e);
+            }}
             style={{ width: "100%" }}
             className="slider"
           />
+          <div className="box-minmax">
+            <span>1</span>
+            <span className="nb-displayed">{numToShow}</span>
+            <span>{nbFilms}</span>
+          </div>
         </div>
         <div className="sort-container container">
           <label htmlFor="sortOrder" className="text">

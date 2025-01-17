@@ -58,6 +58,7 @@ const CatalogContent = () => {
         onSortUpdate={handleSortUpdate}
         sortOrder={sortOrder}
         onSearchUpdate={onSearchUpdate}
+        nbFilms={sortedFilms.length}
       />
       <div className="right-part">
         <FilmCards

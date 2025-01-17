@@ -16,11 +16,14 @@
     display: flex;
     flex-direction: column;
     width: 200px;
+    height: 300px;
     transition: transform 0.2s ease;
     .infos,
     .poster {
       border-radius: 20px;
       transition: filter 0.2s ease;
+      width: 100%;
+      height: 100%;
     }
     .infos {
       position: absolute;
@@ -28,8 +31,6 @@
       padding: 10px;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
       display: flex;
       flex-direction: column;
       justify-content: space-around;

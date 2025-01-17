@@ -11,9 +11,11 @@ const Film = () => {
   }
 
   return (
-    <div className="film-container bg">
-      <FilmHeader banner={film.movie_banner} />
-      <FilmContent film={film} />
+    <div className="margin-page bg">
+      <div className="film-container">
+        <FilmHeader banner={film.movie_banner} />
+        <FilmContent film={film} />
+      </div>
     </div>
   );
 };
