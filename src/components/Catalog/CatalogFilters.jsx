@@ -26,19 +26,22 @@ const CatalogFilters = ({
           />
           <div className="box-minmax">
             <span>1</span>
-            <span className="nb-displayed">{numToShow}</span>
             <span>{nbFilms}</span>
           </div>
         </div>
+
         <div className="sort-container container">
-          <label htmlFor="sortOrder" className="text">
-            Trier par ordre alphabétique :
-          </label>
-          <select id="sortOrder" value={sortOrder} onChange={onSortUpdate}>
-            <option value="asc">ABC</option>
-            <option value="desc">ZYX</option>
+          <select
+            className="dropdown-sort sort-element"
+            id="sortOrder"
+            value={sortOrder}
+            onChange={onSortUpdate}
+          >
+            <option value="asc">A to Z</option>
+            <option value="desc">Z to A</option>
           </select>
         </div>
+
         <div className="search-container container">
           <input
             type="text"
@@ -46,7 +49,7 @@ const CatalogFilters = ({
             placeholder="Search Movie"
             onChange={onSearchUpdate}
             style={{ width: "100%" }}
-            className="search-bar"
+            className="search-bar sort-element"
           />
         </div>
       </div>

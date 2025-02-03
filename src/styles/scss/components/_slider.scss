@@ -45,11 +45,5 @@
     align-items: center;
     font-size: 1em;
     color: map-get($colors, "text");
-    .nb-displayed {
-      border: 2px solid map-get($colors, "text");
-      border-radius: 50%;
-      padding: 5px 10px;
-      box-sizing: border-box;
-    }
   }
 }
