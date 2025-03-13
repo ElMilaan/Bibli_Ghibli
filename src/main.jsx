@@ -6,7 +6,7 @@ import "./styles/index.css";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/*",
     element: <Home />,
     errorElement: <Error404 />,
   },

@@ -1,9 +1,22 @@
+// import PropTypes from "prop-types";
+
+// CatalogFilters.propTypes = {
+//   onFilterUpdate: PropTypes.func.isRequired,
+//   numToShow: PropTypes.number.isRequired,
+//   onSortUpdate: PropTypes.func.isRequired,
+//   sortOrder: PropTypes.string.isRequired,
+//   onSearchUpdate: PropTypes.func.isRequired,
+//   searchData: PropTypes.string.isRequired,
+//   nbFilms: PropTypes.number.isRequired,
+// };
+
 const CatalogFilters = ({
   onFilterUpdate,
   numToShow,
   onSortUpdate,
   sortOrder,
   onSearchUpdate,
+  searchData,
   nbFilms,
 }) => {
   return (
@@ -48,6 +61,7 @@ const CatalogFilters = ({
             id="numToShow"
             placeholder="Search Movie"
             onChange={onSearchUpdate}
+            value={searchData}
             style={{ width: "100%" }}
             className="search-bar sort-element"
           />

@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useMemo } from "react";
 import FilmCard from "./FilmCard";
 
 const FilmCards = ({ films, nbToShow, searchData }) => {
-  const displayedFilms = films
-    .filter((film) => film.title.includes(searchData))
-    .slice(0, nbToShow);
+  const displayedFilms = useMemo(() => {
+    console.log("search data : ", searchData);
+    return films
+      .filter((film) =>
+        film.title.toLowerCase().includes(searchData.toLowerCase())
+      )
+      .slice(0, nbToShow);
+  }, [films, nbToShow, searchData]);
 
   if (displayedFilms.length === 0) {
     return (

@@ -9,7 +9,6 @@ const FilmCard = ({ film }) => {
         <div className="sub-infos">
           <p className="director">{film.director}</p>
           <p className="release-date">{film.release_date}</p>
-          <p className="mark">10/10</p>
         </div>
       </div>
     </Link>
