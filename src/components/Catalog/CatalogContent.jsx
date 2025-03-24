@@ -44,7 +44,9 @@ const CatalogContent = () => {
   }, [searchData]);
 
   if (loading) return <Loading />;
-  if (error) return <Error error={error} />;
+  if (error) {
+    console.log("error : ", error);
+  }
 
   const handleFilterUpdate = (event) => {
     setNumToShow(Number(event.target.value));

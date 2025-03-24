@@ -1,4 +1,5 @@
 @use "./variables" as *;
+@use "media_config.scss" as *;
 
 .films-container {
   box-sizing: border-box;
@@ -51,5 +52,12 @@
         opacity: 1;
       }
     }
+    @include respond-to(phone) {
+      width: 150px;
+      height: auto;
+    }
+  }
+  @include respond-to(phone) {
+    margin-left: 0;
   }
 }
