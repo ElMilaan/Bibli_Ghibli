@@ -1,4 +1,4 @@
-import { apiConfig } from "../libs";
+import apiConfig from "./apiConfig";
 
 const fetchFilms = async () => {
   try {

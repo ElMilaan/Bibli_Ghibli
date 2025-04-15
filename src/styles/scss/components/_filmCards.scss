@@ -1,7 +1,9 @@
 @use "./variables" as *;
+@use "media_config.scss" as *;
 
 .films-container {
   box-sizing: border-box;
+  margin-left: 20vw;
   padding: 10vh 7vw;
   display: flex;
   flex-wrap: wrap;
@@ -50,5 +52,12 @@
         opacity: 1;
       }
     }
+    @include respond-to(phone) {
+      width: 150px;
+      height: auto;
+    }
+  }
+  @include respond-to(phone) {
+    margin-left: 0;
   }
 }

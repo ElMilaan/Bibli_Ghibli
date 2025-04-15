@@ -1,4 +1,5 @@
 @use "variables.scss" as *;
+@use "media_config.scss" as *;
 
 .margin-page {
   background-color: #1e221e;
@@ -30,11 +31,18 @@
       transform: translateY(-50%);
       position: absolute;
       left: 0;
-
       border-top-left-radius: 0px;
       border-bottom-left-radius: 0px;
       border-top-right-radius: 50px;
       border-bottom-right-radius: 50px;
+      min-width: 150px;
+      @include respond-to(phone) {
+        left: 50%;
+        font-size: 0.8em;
+        transform: translate(-50%, -50%);
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+      }
     }
     .poster {
       border-radius: 20px;
@@ -42,30 +50,60 @@
       min-width: 180px;
       width: 12%;
       top: 50vh;
-      transform: translateY(-50%);
-      left: min(calc(50% - 6%), calc(50% - 90px));
+      left: 50%;
+      transform: translate(-50%, -50%);
       box-shadow: -6px 6px 15px rgba(21, 27, 21, 0.7);
+      @include respond-to(phone) {
+        top: 25vh;
+        min-width: 130px;
+      }
     }
     .content {
-      padding: 150px 20%;
-      justify-content: center;
+      padding: 150px 0;
       display: flex;
+      justify-content: center;
       flex-direction: column;
-      .infos {
-        display: flex;
-        flex-direction: column;
+      @include respond-to(phone) {
+        padding: 25px 0;
+      }
+      .film-title {
+        margin-top: 3vh;
         text-align: center;
-        padding: 10%;
-        .except-title {
-          margin-top: 10%;
-          border: 3px solid map-get($colors, "text");
-          border-radius: 20px;
-          padding: 5%;
-          > * {
-            padding: 20px;
+      }
+      .infos {
+        > * {
+          padding: 4vh 5%;
+        }
+        .main-infos {
+          margin: 5vh 0;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          text-align: center;
+          background-color: map-get($colors, "text");
+          color: map-get($colors, "background");
+          div {
+            h2 {
+              margin-bottom: 1vh;
+            }
+          }
+          @include respond-to(phone) {
+            flex-direction: column;
+            div {
+              margin-bottom: 3vh;
+            }
+          }
+        }
+        .description {
+          text-align: center;
+          h2 {
+            margin-bottom: 3vh;
           }
         }
       }
+    }
+    @include respond-to(phone) {
+      margin: 0;
     }
   }
 }

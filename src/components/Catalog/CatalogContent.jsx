@@ -8,9 +8,15 @@ const CatalogContent = () => {
   const [films, setFilms] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [nbToShow, setNumToShow] = useState(7);
-  const [sortOrder, setSortOrder] = useState("asc");
-  const [searchData, setSearchData] = useState("");
+  const [nbToShow, setNumToShow] = useState(
+    localStorage.getItem("nbToShow") || 7
+  );
+  const [sortOrder, setSortOrder] = useState(
+    localStorage.getItem("sortOrder") || "asc"
+  );
+  const [searchData, setSearchData] = useState(
+    localStorage.getItem("searchData") || ""
+  );
 
   useEffect(() => {
     const getFilms = async () => {
@@ -27,8 +33,20 @@ const CatalogContent = () => {
     };
     getFilms();
   }, []);
+  useEffect(() => {
+    localStorage.setItem("nbToShow", nbToShow);
+  }, [nbToShow]);
+  useEffect(() => {
+    localStorage.setItem("sortOrder", sortOrder);
+  }, [sortOrder]);
+  useEffect(() => {
+    localStorage.setItem("searchData", searchData);
+  }, [searchData]);
+
   if (loading) return <Loading />;
-  if (error) return <Error error={error} />;
+  if (error) {
+    console.log("error : ", error);
+  }
 
   const handleFilterUpdate = (event) => {
     setNumToShow(Number(event.target.value));
@@ -58,6 +76,7 @@ const CatalogContent = () => {
         onSortUpdate={handleSortUpdate}
         sortOrder={sortOrder}
         onSearchUpdate={onSearchUpdate}
+        searchData={searchData}
         nbFilms={sortedFilms.length}
       />
       <div className="right-part">

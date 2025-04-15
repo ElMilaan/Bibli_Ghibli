@@ -1,9 +1,22 @@
+// import PropTypes from "prop-types";
+
+// CatalogFilters.propTypes = {
+//   onFilterUpdate: PropTypes.func.isRequired,
+//   numToShow: PropTypes.number.isRequired,
+//   onSortUpdate: PropTypes.func.isRequired,
+//   sortOrder: PropTypes.string.isRequired,
+//   onSearchUpdate: PropTypes.func.isRequired,
+//   searchData: PropTypes.string.isRequired,
+//   nbFilms: PropTypes.number.isRequired,
+// };
+
 const CatalogFilters = ({
   onFilterUpdate,
   numToShow,
   onSortUpdate,
   sortOrder,
   onSearchUpdate,
+  searchData,
   nbFilms,
 }) => {
   return (
@@ -29,20 +42,28 @@ const CatalogFilters = ({
             <span>{nbFilms}</span>
           </div>
         </div>
+
         <div className="sort-container container">
-          <select id="sortOrder" value={sortOrder} onChange={onSortUpdate}>
+          <select
+            className="dropdown-sort sort-element"
+            id="sortOrder"
+            value={sortOrder}
+            onChange={onSortUpdate}
+          >
             <option value="asc">A to Z</option>
             <option value="desc">Z to A</option>
           </select>
         </div>
+
         <div className="search-container container">
           <input
             type="text"
             id="numToShow"
             placeholder="Search Movie"
             onChange={onSearchUpdate}
+            value={searchData}
             style={{ width: "100%" }}
-            className="search-bar"
+            className="search-bar sort-element"
           />
         </div>
       </div>

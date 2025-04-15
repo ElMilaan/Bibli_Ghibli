@@ -1,8 +1,13 @@
 @use "variables.scss" as *;
+@use "media_config.scss" as *;
 
 * {
   margin: 0;
   padding: 0;
+}
+
+*:focus {
+  outline: none;
 }
 
 .link {
@@ -35,10 +40,16 @@ h3 {
 }
 
 h1 {
-  font-size: 4em;
+  font-size: 3em;
+  @include respond-to(phone) {
+    font-size: 2em;
+  }
 }
 h3 {
   font-size: 2em;
+  @include respond-to(phone) {
+    font-size: 1.5em;
+  }
 }
 
 p {
